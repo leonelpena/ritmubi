@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tipoCalculo">¿Cuántos días desea calcular?</string>
+    <string name="app_name">Ritmubi</string>
+    <string name="metodoDeCalculo">Seleccione </string>
+    <string name="dia">Un solo día</string>
+    <string name="variosDias">Varios Días</string>
+    <string name="visualizacion">Visualización</string>
+    <string name="soloTexto">Solo texto</string>
+    <string name="soloGrafico">Solo Gráficos</string>
+    <string name="textoGrafico">Texto y Gráficos</string>
+    <string name="siguiente">Siguiente</string>
+
+</resources>
