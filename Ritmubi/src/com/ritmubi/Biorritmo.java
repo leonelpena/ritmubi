@@ -36,8 +36,22 @@ public class Biorritmo {
 	 * @param fin Fecha de término
 	 * @return
 	 */
-	public static Ciclo calcular(Date nacimiento, Date inicio, Date fin) {
+	public static Ciclo[] calcular(Date nacimiento, Date inicio, Date fin) {
+		int dias_inicial = diasTranscurridos(nacimiento, inicio);
+		int dias_rango = diasTranscurridos(inicio, fin);
+		Ciclo[] ciclos = new Ciclo[dias_rango];
+
+		// Se calcula el biorrimto para cada uno de los dias que estan 
+		// dentro del rango
+		for(int i=0; i<dias_rango; i++) {
+			ciclos[i] = new Ciclo(
+					calcularEmocional(dias_inicial+i),
+					calcularFisico(dias_inicial+i),
+					calcularIntelectual(dias_inicial+i)
+			);
+		}
 		
+		return ciclos;
 	}
 
 	private static double calcularEmocional(int dias) {
@@ -54,7 +68,8 @@ public class Biorritmo {
 	
 	private static int diasTranscurridos(Date inicio, Date fin) {
 		if( inicio.compareTo(fin) <= 0 )
-			throw new IllegalArgumentException("Fecha termino menor o igual que fecha inicio");
+			throw new IllegalArgumentException("Fecha termino menor o igual " +
+					"que fecha inicio");
 			
 		return (int) ((inicio.getTime() - fin.getTime()) / MILISEGUNDOS_POR_DIA);
 	}

@@ -14,28 +14,29 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10px"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
             android:text="@string/tipoCalculo"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
     <RadioGroup
-        android:id="@+id/radioGroup1"
+        android:id="@+id/numeroDiasRadioButton"
         android:layout_width="148dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20px"
-        android:paddingBottom="5px" >
+        android:layout_marginLeft="20dp"
+        android:paddingBottom="5dp" >
 
         <RadioButton
-            android:id="@+id/radio0"
+            android:id="@+id/botonUnDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/dia" />
 
         <RadioButton
-            android:id="@+id/radio1"
+            android:id="@+id/botonVariosDias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/variosDias" />
@@ -51,32 +52,33 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
             android:text="@string/visualizacion"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/tipoVisualizacionRadioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20px" >
+        android:layout_marginLeft="20dp" >
 
         <RadioButton
-            android:id="@+id/radio2"
+            android:id="@+id/botonTextoYGraficos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/textoGrafico" />
 
         <RadioButton
-            android:id="@+id/radio0"
+            android:id="@+id/botonSoloTexto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/soloTexto" />
 
         <RadioButton
-            android:id="@+id/radio1"
+            android:id="@+id/botonSoloGraficos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/soloGrafico" />
@@ -89,11 +91,12 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/botonSiguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginRight="20px"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
             android:text="@string/siguiente" />
 
     </LinearLayout>
