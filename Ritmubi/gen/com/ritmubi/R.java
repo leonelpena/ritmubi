@@ -14,25 +14,32 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int botonCalcular=0x7f05000f;
         public static final int botonSiguiente=0x7f05000c;
         public static final int botonSoloGraficos=0x7f05000a;
         public static final int botonSoloTexto=0x7f050009;
         public static final int botonTextoYGraficos=0x7f050008;
         public static final int botonUnDia=0x7f050003;
         public static final int botonVariosDias=0x7f050004;
+        public static final int botonVolver=0x7f050010;
         public static final int linearLayout1=0x7f050000;
         public static final int linearLayout2=0x7f050005;
         public static final int linearLayout3=0x7f05000b;
         public static final int numeroDiasRadioButton=0x7f050002;
+        public static final int relativeLayout1=0x7f05000e;
+        public static final int selectorFechaNacimiento=0x7f05000d;
         public static final int textView1=0x7f050001;
         public static final int textView2=0x7f050006;
         public static final int tipoVisualizacionRadioButton=0x7f050007;
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int un_dia_activity=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
+        public static final int calcular=0x7f04000c;
+        public static final int cuandoNacio=0x7f04000b;
         public static final int dia=0x7f040003;
         public static final int metodoDeCalculo=0x7f040002;
         public static final int siguiente=0x7f040009;
@@ -40,7 +47,9 @@ public final class R {
         public static final int soloTexto=0x7f040006;
         public static final int textoGrafico=0x7f040008;
         public static final int tipoCalculo=0x7f040000;
+        public static final int unSoloDia=0x7f04000a;
         public static final int variosDias=0x7f040004;
         public static final int visualizacion=0x7f040005;
+        public static final int volver=0x7f04000d;
     }
 }

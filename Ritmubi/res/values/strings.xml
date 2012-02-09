@@ -11,5 +11,9 @@
     <string name="soloGrafico">Solo Gráficos</string>
     <string name="textoGrafico">Texto y Gráficos</string>
     <string name="siguiente">Siguiente</string>
+    <string name="unSoloDia">Biorritmo para un día</string>
+    <string name="cuandoNacio">¿Cuándo nació?</string>
+    <string name="calcular">Calcular</string>
+    <string name="volver">Volver</string>
 
 </resources>
