@@ -15,5 +15,9 @@
     <string name="cuandoNacio">¿Cuándo nació?</string>
     <string name="calcular">Calcular</string>
     <string name="volver">Volver</string>
+    <string name="biorritmoVariosDias">Biorritmo para varios días</string>
+    <string name="hasta">Hasta</string>
+    <string name="desde">Calcular desde</string>
+    <string name="dias">dias</string>
 
 </resources>
