@@ -31,7 +31,7 @@ public final class R {
         public static final int relativeLayout1=0x7f05000e;
         public static final int selectorFechaInicio=0x7f050014;
         public static final int selectorFechaNacimiento=0x7f05000d;
-        public static final int spinner1=0x7f050017;
+        public static final int selectorNumeroDias=0x7f050017;
         public static final int tableRow1=0x7f050015;
         public static final int tableRow2=0x7f050019;
         public static final int textView1=0x7f050001;

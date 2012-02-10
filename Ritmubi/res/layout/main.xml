@@ -72,16 +72,16 @@
             android:text="@string/textoGrafico" />
 
         <RadioButton
-            android:id="@+id/botonSoloTexto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/soloTexto" />
-
-        <RadioButton
             android:id="@+id/botonSoloGraficos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/soloGrafico" />
+
+        <RadioButton
+            android:id="@+id/botonSoloTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/soloTexto" />
     </RadioGroup>
 
     <LinearLayout
