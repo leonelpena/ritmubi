@@ -4,8 +4,8 @@ import android.app.Activity;
 
 public class Grafico extends Activity {
 
-	public static final short 
-			TEXTO_Y_GRAFICOS	=	1,
-			SOLO_GRAFICOS		=	2,
-			SOLO_TEXTO			=	3;
+	public static final String 
+			TEXTO_Y_GRAFICOS	=	"TG",
+			SOLO_GRAFICOS		=	"SG",
+			SOLO_TEXTO			=	"ST";
 }

@@ -16,8 +16,8 @@ public final class R {
     public static final class id {
         public static final int botonCalcular=0x7f05000f;
         public static final int botonSiguiente=0x7f05000c;
-        public static final int botonSoloGraficos=0x7f05000a;
-        public static final int botonSoloTexto=0x7f050009;
+        public static final int botonSoloGraficos=0x7f050009;
+        public static final int botonSoloTexto=0x7f05000a;
         public static final int botonTextoYGraficos=0x7f050008;
         public static final int botonUnDia=0x7f050003;
         public static final int botonVariosDias=0x7f050004;

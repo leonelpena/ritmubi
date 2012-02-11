@@ -1,11 +1,12 @@
 package com.ritmubi;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 public class RitmubiActivity extends Activity {
 	
@@ -16,7 +17,7 @@ public class RitmubiActivity extends Activity {
 				botonTextoYGraficos,
 				botonSoloGrafico,
 				botonSoloTexto;
-	private short tipoPresentacion = Grafico.TEXTO_Y_GRAFICOS;
+	private String tipoPresentacion = Grafico.TEXTO_Y_GRAFICOS;
 	
     /** Called when the activity is first created. */
     @Override
@@ -72,16 +73,32 @@ public class RitmubiActivity extends Activity {
     private void setActionUnDia() {
     	botonSiguiente.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "Un Dia, "+tipoPresentacion, Toast.LENGTH_LONG).show();
+				//Toast.makeText(getApplicationContext(), "Un Dia, "+tipoPresentacion, Toast.LENGTH_LONG).show();
+				lanzadorUnDiaActivity();
 			}
 		});
     }
-    
+
     private void setActionVariosDias() {
     	botonSiguiente.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "Varios Dias, "+tipoPresentacion, Toast.LENGTH_LONG).show();
+				//Toast.makeText(getApplicationContext(), "Varios Dias, "+tipoPresentacion, Toast.LENGTH_LONG).show();
+				lanzadorVariosDiasActivity();
 			}
 		});
+    }
+
+    private void lanzadorUnDiaActivity() {
+    	// lanzamos el intent de UnDiaActivity
+		Intent i = new Intent(this, UnDiaActivity.class);
+		i.putExtra("tipoPresentacion", tipoPresentacion);
+		startActivity(i);
+    }
+
+    private void lanzadorVariosDiasActivity() {
+    	// lanzamos el intent de VariosDiasActivity
+		Intent i = new Intent(this, VariosDiasActivity.class);
+		i.putExtra("tipoPresentacion", tipoPresentacion);
+		startActivity(i);
     }
 }
