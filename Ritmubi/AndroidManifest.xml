@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name="UnDiaActivity"></activity>
-        <activity android:name="VariosDiasActivity"></activity>
+        <activity android:name=".VariosDiasActivity"></activity>
     </application>
 
 </manifest>
