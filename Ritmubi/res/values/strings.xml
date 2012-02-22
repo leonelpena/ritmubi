@@ -19,5 +19,6 @@
     <string name="hasta">Hasta</string>
     <string name="desde">Calcular desde</string>
     <string name="dias">dias</string>
+    <string name="que_dia">¿Qué día desea calcular?</string>
 
 </resources>
