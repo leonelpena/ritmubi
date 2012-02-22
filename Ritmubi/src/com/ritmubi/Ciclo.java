@@ -1,7 +1,10 @@
 package com.ritmubi;
 
-public class Ciclo {
+import java.io.Serializable;
 
+public class Ciclo implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private float 
 		emocional,
 		fisico,
