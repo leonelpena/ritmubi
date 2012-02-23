@@ -21,9 +21,9 @@ public class Biorritmo {
 	public static Ciclo calcular(Date nacimiento, Date fecha) {
 		int dias = diasTranscurridos(nacimiento, fecha);
 		Ciclo ciclo = new Ciclo(
-				calcularEmocional(dias),
-				calcularFisico(dias),
-				calcularIntelectual(dias)
+				100*calcularEmocional(dias),
+				100*calcularFisico(dias),
+				100*calcularIntelectual(dias)
 		);
 		
 		return ciclo;		
@@ -45,9 +45,9 @@ public class Biorritmo {
 		// dentro del rango
 		for(int i=0; i<dias_rango; i++) {
 			ciclos[i] = new Ciclo(
-					calcularEmocional(dias_inicial+i),
-					calcularFisico(dias_inicial+i),
-					calcularIntelectual(dias_inicial+i)
+					100*calcularEmocional(dias_inicial+i),
+					100*calcularFisico(dias_inicial+i),
+					100*calcularIntelectual(dias_inicial+i)
 			);
 		}
 		
