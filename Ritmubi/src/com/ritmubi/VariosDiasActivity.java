@@ -17,8 +17,8 @@ public class VariosDiasActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.varios_dias);
         Bundle bundle = getIntent().getExtras();
-        Toast.makeText(getApplicationContext(), "Varios Dias, Presentacion: "+
-        		bundle.getString("tipoPresentacion"), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Varios Dias, Nacimiento: "+
+        		bundle.getString("fechaNacimiento"), Toast.LENGTH_LONG).show();
     
         botonVolver = (Button) findViewById(R.id.botonVolver);
         botonCalcular = (Button) findViewById(R.id.botonCalcular);

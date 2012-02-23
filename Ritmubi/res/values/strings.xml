@@ -20,5 +20,8 @@
     <string name="desde">Calcular desde</string>
     <string name="dias">dias</string>
     <string name="que_dia">¿Qué día desea calcular?</string>
+    <string name="emocional">Emocional</string>
+    <string name="fisico">Físico</string>
+    <string name="intelectual">Intelectual</string>
 
 </resources>

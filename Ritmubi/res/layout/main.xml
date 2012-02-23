@@ -9,12 +9,12 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
- 
+
     <LinearLayout
         android:id="@+id/LinearLayout01"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="vertical" >
 
         <TextView
@@ -41,12 +41,12 @@
 
         </LinearLayout>
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical" >
 
         <TextView
@@ -80,49 +80,6 @@
             android:text="@string/variosDias" />
 
     </RadioGroup>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="0dip"
-            android:layout_marginLeft="3dp"
-            android:layout_weight="0.01"
-            android:text="@string/visualizacion"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <RadioGroup
-            android:id="@+id/tipoVisualizacionRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp" >
-
-            <RadioButton
-                android:id="@+id/botonTextoYGraficos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/textoGrafico" />
-
-            <RadioButton
-                android:id="@+id/botonSoloGraficos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/soloGrafico" />
-
-            <RadioButton
-                android:id="@+id/botonSoloTexto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/soloTexto" />
-
-        </RadioGroup>
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"

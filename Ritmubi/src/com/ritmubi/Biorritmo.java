@@ -9,6 +9,11 @@ public class Biorritmo {
 			FRECUENCIA_FISICA	 	= 23,
 			FRECUENCIA_INTELECTUAL	= 33;
 	
+	public static final String 
+			EMOCIONAL				= "Emocional",
+			FISICO					= "FÌsico",
+			INTELECTUAL				= "Intelectual";
+	
 	private static final long 
 			MILISEGUNDOS_POR_DIA = 24 * 60 * 60 * 1000;  
 	
@@ -18,7 +23,9 @@ public class Biorritmo {
 	 * @param fecha Fecha para la cual se desea realizar el calculo
 	 * @return
 	 */
-	public static Ciclo calcular(Date nacimiento, Date fecha) {
+	public static Ciclo calcular(Date nacimiento, Date fecha) 
+					throws FechaException {
+
 		int dias = diasTranscurridos(nacimiento, fecha);
 		Ciclo ciclo = new Ciclo(
 				100*calcularEmocional(dias),
@@ -36,7 +43,9 @@ public class Biorritmo {
 	 * @param fin Fecha de t√©rmino
 	 * @return
 	 */
-	public static Ciclo[] calcular(Date nacimiento, Date inicio, Date fin) {
+	public static Ciclo[] calcular(Date nacimiento, Date inicio, Date fin) 
+					throws FechaException {
+
 		int dias_inicial = diasTranscurridos(nacimiento, inicio);
 		int dias_rango = diasTranscurridos(inicio, fin);
 		Ciclo[] ciclos = new Ciclo[dias_rango];
@@ -66,10 +75,11 @@ public class Biorritmo {
 		return Math.sin(2*Math.PI*dias / FRECUENCIA_INTELECTUAL);
 	}
 	
-	private static int diasTranscurridos(Date inicio, Date fin) {
-		if( inicio.compareTo(fin) <= 0 )
-			throw new IllegalArgumentException("Fecha termino menor o igual " +
-					"que fecha inicio");
+	private static int diasTranscurridos(Date inicio, Date fin) 
+				throws FechaException {
+		
+		if( inicio.after(fin) )
+			throw new FechaException();
 			
 		return (int) ((inicio.getTime() - fin.getTime()) / MILISEGUNDOS_POR_DIA);
 	}
