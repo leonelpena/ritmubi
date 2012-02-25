@@ -24,4 +24,5 @@
     <string name="fisico">Físico</string>
     <string name="intelectual">Intelectual</string>
     <string name="Mensaje">Tu Biorritmo los proximos Días</string>
+    <string name="fecha">Fecha....</string>
 </resources>

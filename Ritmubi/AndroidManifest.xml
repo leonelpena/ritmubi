@@ -21,6 +21,7 @@
         <activity android:name="UnDiaActivity"></activity>
         <activity android:name="VariosDiasActivity"></activity>
         <activity android:name="GraficoBarras"></activity>
+        <activity android:name="GraficoSenoidal"></activity>
     </application>
 
 </manifest>

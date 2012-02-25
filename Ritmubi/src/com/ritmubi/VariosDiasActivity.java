@@ -1,5 +1,7 @@
 package com.ritmubi;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import android.app.Activity;
@@ -18,11 +20,17 @@ public class VariosDiasActivity extends Activity
 	private Date fechaInicio = new Date();
 	private Date fechaFin =  new Date();
 	private DatePicker fechaACalcularPicker;
-	public Ciclo []ciclo = new Ciclo[28];
-	private float [] valoresEmocionales = new float[28];
-	private float [] valoresIntelectuales = new float[28];
-	private float [] valoresFisicos = new float[28];
-	private Integer i=0;
+	//public Ciclo []ciclo = new Ciclo[28];
+	//private float [] valoresEmocionales = new float[28];
+	//private float [] valoresIntelectuales = new float[28];
+	//private float [] valoresFisicos = new float[28];
+	//private Integer i=0;
+	public Ciclo[] ciclo;
+	ArrayList<Ciclo2> listaCiclos;
+	private float[] valoresEmocionales;
+	private float[] valoresIntelectuales;
+	private float[] valoresFisicos;
+	
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,35 +65,63 @@ public class VariosDiasActivity extends Activity
 				fechaInicio.setYear(fechaACalcularPicker.getYear());
 				
 				//Fecha Final Calculo
-				fechaFin = CalcularFechaFinal(fechaInicio);
-				try 
+				//fechaFin = CalcularFechaFinal(fechaInicio);
+				//fechaFin = new Date(fechaInicio);
+				Calendar fechaFinal = Calendar.getInstance();
+				fechaFinal.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDate());
+				fechaFinal.add(Calendar.DATE, +42);
+				//fechaFinal.set(Calendar.DAY_OF_MONTH, );
+				//fechaFin = fechaFinal.getTime();
+				fechaFin.setDate(fechaFinal.get(Calendar.DATE));
+				fechaFin.setMonth(fechaFinal.get(Calendar.MONTH));
+				fechaFin.setYear(fechaFinal.get(Calendar.YEAR));
+
+				Toast.makeText(getApplicationContext(), "F: "+fechaFin, 
+						Toast.LENGTH_LONG).show();
+				
+				//System.out.println("N: "+fechaNacimiento);
+				
+				try
 				{
 					ciclo = Biorritmo.calcular(fechaNacimiento, fechaInicio, fechaFin);
+					//ciclo = Biorritmo.calcular(fechaNacimiento, fechaInicio,
+					listaCiclos = Biorritmo.calcular(fechaNacimiento, fechaInicio,
+								fechaFin, true, true);
 				}
 				catch(FechaException e) 
 				{
-					Toast.makeText(getApplicationContext(), "Fecha Incorrecta", 
+					//Toast.makeText(getApplicationContext(), "Fecha Incorrecta",
+					Toast.makeText(getApplicationContext(), "N: "+fechaNacimiento.getDate()+
+							" "+fechaNacimiento.getMonth()+" "+fechaNacimiento.getYear()+
+							", I: "+fechaInicio.getDate()+" "+fechaInicio.getMonth()+
+							" "+fechaInicio.getYear()+" , F: "+fechaFinal.get(Calendar.DAY_OF_MONTH)+
+							" "+fechaFinal.get(Calendar.MONTH)+" "+fechaFinal.get(Calendar.YEAR),
 							Toast.LENGTH_LONG).show();
 					return;
 				}
 				
 				Intent intent = new Intent(VariosDiasActivity.this, GraficoSenoidal.class);
 				
-				for(i = 0;i<28;i++)	
+				valoresEmocionales = new float[ciclo.length];
+				valoresIntelectuales = new float[ciclo.length];
+				valoresFisicos  = new float[ciclo.length];
+				//for(int i=0; i<28; i++)
+				for(int i=0; i<ciclo.length; i++)
 				{
-				 valoresEmocionales[i] = ciclo[i].getEmocional();
-				 valoresIntelectuales[i] = ciclo[i].getIntelectual();
-				 valoresFisicos[i] = ciclo[i].getFisico();
+					valoresEmocionales[i] = ciclo[i].getEmocional();
+					valoresIntelectuales[i] = ciclo[i].getIntelectual();
+					valoresFisicos[i] = ciclo[i].getFisico();
 				}
 				
 				intent.putExtra("valoresEmocionales", valoresEmocionales);
 				intent.putExtra("valoresIntelectuales", valoresIntelectuales);
 				intent.putExtra("valoresFisicos", valoresFisicos);
+				intent.putExtra("listaCiclos", listaCiclos);
 				startActivity(intent);
 				
 			}
 
-			private Date CalcularFechaFinal(Date fechaInicio) {
+			/*private Date CalcularFechaFinal(Date fechaInicio) {
 				//calculamos la fecha final
 				int mes;
 				Date fechaFin = new Date();
@@ -101,7 +137,7 @@ public class VariosDiasActivity extends Activity
 				fechaFin = fechaInicio;
 				fechaFin.setMonth(mes);
 				return fechaFin;
-			}
+			}*/
 		});
     }
 }

@@ -16,6 +16,7 @@ public class UnDiaActivity extends Activity {
 	private Date fechaNacimiento;
 	private Date fechaACalcular;
 	public Ciclo ciclo;
+	public Ciclo2 ciclo2;
 
 	/** Called when the activity is first created. */
     @Override
@@ -58,6 +59,7 @@ public class UnDiaActivity extends Activity {
 				try 
 				{
 					ciclo = Biorritmo.calcular(fechaNacimiento, fechaACalcular);
+					ciclo2 = new Ciclo2(ciclo);
 				} 
 				catch(FechaException e) 
 				{
@@ -68,6 +70,7 @@ public class UnDiaActivity extends Activity {
 				
 				Intent i = new Intent(UnDiaActivity.this, GraficoBarras.class);
 				i.putExtra("ciclo", ciclo);
+				i.putExtra("ciclo2", ciclo2);
 				startActivity(i);
 			}
         });

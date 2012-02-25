@@ -25,7 +25,8 @@ public class GraficoBarras extends Activity  {
 		intelectualText = (TextView) findViewById(R.id.intelectualText);
 		
 		Bundle bundle = getIntent().getExtras();
-		Ciclo ciclo = (Ciclo) bundle.getSerializable("ciclo");
+		//Ciclo ciclo = (Ciclo) bundle.getSerializable("ciclo");
+		Ciclo2 ciclo = (Ciclo2) bundle.getParcelable("ciclo2");
 		GraphViewSeries Series = new GraphViewSeries(new GraphViewData[] 
 				{new GraphViewData(1, ciclo.getEmocional()),new GraphViewData(2,ciclo.getFisico()),new GraphViewData(3,ciclo.getIntelectual())});
 		GraphView graphView;
