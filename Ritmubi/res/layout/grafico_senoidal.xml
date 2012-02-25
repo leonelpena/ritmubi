@@ -5,7 +5,7 @@
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+		android:layout_height="wrap_content">
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:layout_width="fill_parent"
@@ -15,83 +15,107 @@
 		</LinearLayout>
 
 		<LinearLayout
+		    android:id="@+id/LinearLayout01"
 		    android:layout_width="fill_parent"
-		    android:layout_height="fill_parent"
+		    android:layout_height="250dip"
+		    android:layout_marginLeft="5dp"
 		    android:orientation="vertical" >
-
-		    <LinearLayout
-		        xmlns:android="http://schemas.android.com/apk/res/android"
-		        android:id="@+id/LinearLayout01"
-		        android:layout_width="fill_parent"
-		        android:layout_height="250dip"
-		        android:layout_marginLeft="5dp"
-		        android:orientation="vertical" >
 
-		        <TextView
-		            android:id="@+id/fecha_1"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginTop="5dp"
-		            android:text="@string/fecha"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/fecha_1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="5dp"
+		        android:text="@string/fecha"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/emocional_1"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="20dp"
-		            android:text="@string/emocional"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/emocional_1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/emocional"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/intelectual_1"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="20dp"
-		            android:text="@string/intelectual"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/intelectual_1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/intelectual"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/fisico_1"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="20dp"
-		            android:text="@string/fisico"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/fisico_1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/fisico"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/fecha_2"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginTop="5dp"
-		            android:text="@string/fecha"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/fecha_2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="5dp"
+		        android:text="@string/fecha"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/emocional_2"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="20dp"
-		            android:text="@string/emocional"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/emocional_2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/emocional"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/intelectual_2"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="20dp"
-		            android:text="@string/intelectual"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <TextView
+		        android:id="@+id/intelectual_2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/intelectual"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		        <TextView
-		            android:id="@+id/fisico_2"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="20dp"
-		            android:text="@string/fisico"
-		            android:textAppearance="?android:attr/textAppearanceMedium" />
-		    </LinearLayout>
+		    <TextView
+		        android:id="@+id/fisico_2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/fisico"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
+		    <TextView
+		        android:id="@+id/fecha_3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="5dp"
+		        android:text="@string/fecha"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		    <TextView
+		        android:id="@+id/emocional_3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/emocional"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		    <TextView
+		        android:id="@+id/intelectual_3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/intelectual"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		    <TextView
+		        android:id="@+id/fisico_3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/fisico"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
 		</LinearLayout>
 
 		</LinearLayout>

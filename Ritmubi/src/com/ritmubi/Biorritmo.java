@@ -35,7 +35,7 @@ public class Biorritmo {
 				100*calcularIntelectual(dias)
 		);
 		
-		return ciclo;		
+		return ciclo;
 	}
 	
 	/**
@@ -45,53 +45,13 @@ public class Biorritmo {
 	 * @param fin Fecha de término
 	 * @return
 	 */
-	public static Ciclo[] calcular(Date nacimiento, Date inicio, Date fin) 
-					throws FechaException {
-
-		int dias_inicial = diasTranscurridos(nacimiento, inicio);
-		int dias_rango = diasTranscurridos(inicio, fin);
-		Ciclo[] ciclos = new Ciclo[dias_rango];
-
-		// Se calcula el biorrimto para cada uno de los dias que estan 
-		// dentro del rango
-		for(int i=0; i<dias_rango; i++) {
-			ciclos[i] = new Ciclo(
-					100*calcularEmocional(dias_inicial+i),
-					100*calcularFisico(dias_inicial+i),
-					100*calcularIntelectual(dias_inicial+i)
-			);
-		}
-		
-		return ciclos;
-	}
-	
-	public static Ciclo2[] calcular(Date nacimiento, Date inicio, Date fin, boolean t) 
-					throws FechaException {
-
-		int dias_inicial = diasTranscurridos(nacimiento, inicio);
-		int dias_rango = diasTranscurridos(inicio, fin);
-		Ciclo2[] ciclos = new Ciclo2[dias_rango];
-		
-		// Se calcula el biorrimto para cada uno de los dias que estan 
-		// dentro del rango
-		for(int i=0; i<dias_rango; i++) {
-			ciclos[i] = new Ciclo2(
-					100*calcularEmocional(dias_inicial+i),
-					100*calcularFisico(dias_inicial+i),
-					100*calcularIntelectual(dias_inicial+i)
-			);
-		}
-		
-		return ciclos;
-	}
-	
-	public static ArrayList<Ciclo2> calcular(Date nacimiento, Date inicio, Date fin, boolean t, boolean m) 
+	public static ArrayList<Ciclo> calcular(Date nacimiento, Date inicio, Date fin) 
 					throws FechaException {
 		
 		int dias_inicial = diasTranscurridos(nacimiento, inicio);
 		int dias_rango = diasTranscurridos(inicio, fin);
-		Ciclo2 ciclo = null;
-		ArrayList<Ciclo2> lista = new ArrayList<Ciclo2>(dias_rango);
+		Ciclo ciclo = null;
+		ArrayList<Ciclo> lista = new ArrayList<Ciclo>(dias_rango);
 		Calendar calendario = Calendar.getInstance();
 		calendario.set(inicio.getYear(), inicio.getMonth(), inicio.getDate());
 		Date fechaCiclo = null;
@@ -104,7 +64,7 @@ public class Biorritmo {
 			fechaCiclo.setDate(calendario.get(Calendar.DATE));
 			fechaCiclo.setMonth(calendario.get(Calendar.MONTH));
 			fechaCiclo.setYear(calendario.get(Calendar.YEAR));
-			ciclo = new Ciclo2(
+			ciclo = new Ciclo(
 					100*calcularEmocional(dias_inicial+i),
 					100*calcularFisico(dias_inicial+i),
 					100*calcularIntelectual(dias_inicial+i),

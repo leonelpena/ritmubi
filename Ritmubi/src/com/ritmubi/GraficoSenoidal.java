@@ -1,63 +1,36 @@
 package com.ritmubi;
 
 import java.util.ArrayList;
-
 import com.jjoe64.graphview.LineGraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphView.GraphViewSeries;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class GraficoSenoidal extends Activity
 {
-	//public Ciclo []ciclo = new Ciclo[29];
-	//private float [] valoresEmocionales = new float[28];
-	//private float [] valoresIntelectuales = new float[28];
-	//private float [] valoresFisicos = new float[28];
-	//public Ciclo[] ciclo;
-	private float[] valoresEmocionales;
-	private float[] valoresIntelectuales;
-	private float[] valoresFisicos;
 	private TextView fechaView,
 					emocionalView,
 					intelectualView,
 					fisicoView;
-	private ArrayList<Ciclo2> listaCiclos;
+	private ArrayList<Ciclo> listaCiclos;
 	
 	public void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grafico_senoidal);
         Bundle bundle = getIntent().getExtras();
-                
-        valoresEmocionales = bundle.getFloatArray("valoresEmocionales");
-        valoresIntelectuales = bundle.getFloatArray("valoresIntelectuales");
-        valoresFisicos = bundle.getFloatArray("valoresFisicos");
-    
-        //Ciclo2[] ciclo = (Ciclo2[]) bundle.getParcelableArray("ciclo");
-        //ciclo = (Ciclo2[]) bundle.getParcelableArray("ciclo");
+
         listaCiclos = bundle.getParcelableArrayList("listaCiclos");
-        
-        /*
-        GraphViewData[] dataEmocional = new GraphViewData[valoresEmocionales.length];
-        GraphViewData[] dataIntelectual = new GraphViewData[valoresIntelectuales.length];
-        GraphViewData[] dataFisica = new GraphViewData[valoresFisicos.length];
-        */
+
         GraphViewData[] dataEmocional = new GraphViewData[listaCiclos.size()];
         GraphViewData[] dataIntelectual = new GraphViewData[listaCiclos.size()];
         GraphViewData[] dataFisica = new GraphViewData[listaCiclos.size()];
-        
-        /*for(int i=0; i<valoresEmocionales.length; i++) 
-        {
-        	dataEmocional[i] = new GraphViewData(i,valoresEmocionales[i]);
-        	dataIntelectual[i] = new GraphViewData(i,valoresIntelectuales[i]);
-        	dataFisica[i] = new GraphViewData(i,valoresFisicos[i]);
-        }*/
-        Ciclo2 ciclo = null;
+
+        Ciclo ciclo = null;
         for(int i=0; i<listaCiclos.size(); i++) 
         {
         	ciclo = listaCiclos.get(i);
@@ -103,6 +76,19 @@ public class GraficoSenoidal extends Activity
 		fisicoView = (TextView) findViewById(R.id.fisico_2);
 		
 		ciclo = listaCiclos.get(1);
+		fechaView.setText("Fecha: "+ciclo.getFecha().getDate()+"/"+
+				(ciclo.getFecha().getMonth()+1) + "/"+ciclo.getFecha().getYear() );
+		emocionalView.setText(Biorritmo.EMOCIONAL+": "+ciclo.getEmocional()+"%");
+		intelectualView.setText(Biorritmo.INTELECTUAL+": "+ciclo.getIntelectual()+"%");
+		fisicoView.setText(Biorritmo.FISICO+": "+ciclo.getFisico()+"%");
+		
+		// Informacion para el segundo dia del rango de inicio
+		fechaView = (TextView) findViewById(R.id.fecha_3);
+		emocionalView = (TextView) findViewById(R.id.emocional_3);
+		intelectualView = (TextView) findViewById(R.id.intelectual_3);
+		fisicoView = (TextView) findViewById(R.id.fisico_3);
+		
+		ciclo = listaCiclos.get(2);
 		fechaView.setText("Fecha: "+ciclo.getFecha().getDate()+"/"+
 				(ciclo.getFecha().getMonth()+1) + "/"+ciclo.getFecha().getYear() );
 		emocionalView.setText(Biorritmo.EMOCIONAL+": "+ciclo.getEmocional()+"%");
