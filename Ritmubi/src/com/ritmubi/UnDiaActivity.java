@@ -11,8 +11,7 @@ import android.widget.Toast;
 
 public class UnDiaActivity extends Activity {
 
-	private Button botoncalcular,
-					botonVolver;
+	private Button botoncalcular,botonVolver;
 	private DatePicker fechaACalcularPicker;
 	private Date fechaNacimiento;
 	private Date fechaACalcular;
@@ -34,8 +33,10 @@ public class UnDiaActivity extends Activity {
         		bundle.getInt("dayNacimiento")+", M: "+ bundle.getInt("monthNacimiento") +
         		", Y: "+bundle.getInt("yearNacimiento"), Toast.LENGTH_LONG).show();
     
-        botoncalcular.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
+        botoncalcular.setOnClickListener(new View.OnClickListener() 
+        {
+			public void onClick(View v)
+			{
 			
 				Bundle bundle = getIntent().getExtras();
 				
@@ -54,9 +55,12 @@ public class UnDiaActivity extends Activity {
 		        		fechaACalcular.getDate()+", M: "+ fechaACalcular.getMonth() +
 		        		", Y: "+fechaACalcular.getYear(), Toast.LENGTH_LONG).show();
 
-				try {
+				try 
+				{
 					ciclo = Biorritmo.calcular(fechaNacimiento, fechaACalcular);
-				} catch(FechaException e) {
+				} 
+				catch(FechaException e) 
+				{
 					Toast.makeText(getApplicationContext(), "Fecha Incorrecta", 
 							Toast.LENGTH_LONG).show();
 					return;
@@ -68,8 +72,10 @@ public class UnDiaActivity extends Activity {
 			}
         });
         
-        botonVolver.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
+        botonVolver.setOnClickListener(new View.OnClickListener() 
+        {
+			public void onClick(View v) 
+			{
 				// Cerramos la activity
 				finish();				
 			}
