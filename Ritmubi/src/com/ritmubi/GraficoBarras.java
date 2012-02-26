@@ -42,11 +42,11 @@ public class GraficoBarras extends Activity  {
 		
 		// Se escriben los porcentajes en la vista
 		emocionalText.setText(Biorritmo.EMOCIONAL+": "+
-				Float.toString(ciclo.getEmocional())+"%");
+				Integer.toString(ciclo.getEmocional())+"%");
 		fisicoText.setText(Biorritmo.FISICO+": "+
-				Float.toString(ciclo.getFisico())+"%");
+				Integer.toString(ciclo.getFisico())+"%");
 		intelectualText.setText(Biorritmo.INTELECTUAL+": "+
-				Float.toString(ciclo.getIntelectual())+"%");
+				Integer.toString(ciclo.getIntelectual())+"%");
 		
 		botonnuevocalculo.setOnClickListener(new View.OnClickListener() 
 	    {

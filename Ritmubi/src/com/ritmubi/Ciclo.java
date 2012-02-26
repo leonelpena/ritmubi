@@ -40,16 +40,16 @@ public class Ciclo implements Parcelable {
 		readFromParcel(in);
 	}
 	
-	public float getEmocional() {
-		return emocional;
+	public int getEmocional() {
+		return (int) emocional;
 	}
 	
-	public float getFisico() {
-		return fisico;
+	public int getFisico() {
+		return (int) fisico;
 	}
 	
-	public float getIntelectual() {
-		return intelectual;
+	public int getIntelectual() {
+		return (int) intelectual;
 	}
 	
 	public Date getFecha() {
