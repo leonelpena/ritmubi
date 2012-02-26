@@ -27,11 +27,6 @@ public class UnDiaActivity extends Activity {
         botoncalcular = (Button)findViewById(R.id.botonCalcular);
         botonVolver = (Button) findViewById(R.id.botonVolver);
         fechaACalcularPicker =  (DatePicker)findViewById(R.id.selectorFechaACalcular);
-
-        Bundle bundle = getIntent().getExtras();
-        Toast.makeText(getApplicationContext(), "D: "+ 
-        		bundle.getInt("dayNacimiento")+", M: "+ bundle.getInt("monthNacimiento") +
-        		", Y: "+bundle.getInt("yearNacimiento"), Toast.LENGTH_LONG).show();
     
         botoncalcular.setOnClickListener(new View.OnClickListener() 
         {
@@ -50,10 +45,6 @@ public class UnDiaActivity extends Activity {
 				fechaACalcular.setDate(fechaACalcularPicker.getDayOfMonth());
 				fechaACalcular.setMonth(fechaACalcularPicker.getMonth());
 				fechaACalcular.setYear(fechaACalcularPicker.getYear());
-				
-				Toast.makeText(getApplicationContext(), "D: "+ 
-		        		fechaACalcular.getDate()+", M: "+ fechaACalcular.getMonth() +
-		        		", Y: "+fechaACalcular.getYear(), Toast.LENGTH_LONG).show();
 
 				try 
 				{

@@ -1,6 +1,8 @@
 package com.ritmubi;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,11 +17,11 @@ public class GraficoBarras extends Activity  {
 	private TextView emocionalText,
 					fisicoText,
 					intelectualText;
-	
+	private Button botonnuevocalculo;
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.grafico_barras);
-
+		botonnuevocalculo = (Button)findViewById(R.id.nuevocalculo);
 		emocionalText = (TextView) findViewById(R.id.emocionalText);
 		fisicoText = (TextView) findViewById(R.id.fisicoText);
 		intelectualText = (TextView) findViewById(R.id.intelectualText);
@@ -45,6 +47,14 @@ public class GraficoBarras extends Activity  {
 				Float.toString(ciclo.getFisico())+"%");
 		intelectualText.setText(Biorritmo.INTELECTUAL+": "+
 				Float.toString(ciclo.getIntelectual())+"%");
+		
+		botonnuevocalculo.setOnClickListener(new View.OnClickListener() 
+	    {
+			public void onClick(View v)
+			{
+				finish();				
+			}
+		});
 	}
 
 }

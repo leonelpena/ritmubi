@@ -7,6 +7,8 @@ import com.jjoe64.graphview.GraphView.GraphViewSeries;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,13 +19,13 @@ public class GraficoSenoidal extends Activity
 					intelectualView,
 					fisicoView;
 	private ArrayList<Ciclo> listaCiclos;
-	
+	private Button botonnuevocalculo;
 	public void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grafico_senoidal);
         Bundle bundle = getIntent().getExtras();
-
+        botonnuevocalculo = (Button)findViewById(R.id.nuevocalculo);
         listaCiclos = bundle.getParcelableArrayList("listaCiclos");
 
         GraphViewData[] dataEmocional = new GraphViewData[listaCiclos.size()];
@@ -94,5 +96,15 @@ public class GraficoSenoidal extends Activity
 		emocionalView.setText(Biorritmo.EMOCIONAL+": "+ciclo.getEmocional()+"%");
 		intelectualView.setText(Biorritmo.INTELECTUAL+": "+ciclo.getIntelectual()+"%");
 		fisicoView.setText(Biorritmo.FISICO+": "+ciclo.getFisico()+"%");
+		
+		botonnuevocalculo.setOnClickListener(new View.OnClickListener() 
+	    {
+			public void onClick(View v)
+			{
+				finish();				
+			}
+		});
+		
 	}
+	
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical" >
+
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
@@ -13,7 +15,10 @@
 			android:id="@+id/graph1" >
 
 		</LinearLayout>
-
+<ScrollView  
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical" >
 		<LinearLayout
 		    android:id="@+id/LinearLayout01"
 		    android:layout_width="fill_parent"
@@ -27,7 +32,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="5dp"
 		        android:text="@string/fecha"
-		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		        android:textAppearance="?android:attr/textAppearanceMedium" 
+		        />
 
 		    <TextView
 		        android:id="@+id/emocional_1"
@@ -116,7 +122,15 @@
 		        android:layout_marginLeft="20dp"
 		        android:text="@string/fisico"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />
-		</LinearLayout>
+
+		    <Button
+		        android:id="@+id/nuevocalculo"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:text="Nuevo Cálculo" />
 
+		</LinearLayout>
+</ScrollView>
 		</LinearLayout>
 </ScrollView>

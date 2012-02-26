@@ -1,5 +1,6 @@
 package com.ritmubi;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,14 +28,14 @@ public class Biorritmo {
 	 */
 	public static Ciclo calcular(Date nacimiento, Date fecha) 
 					throws FechaException {
-
-		int dias = diasTranscurridos(nacimiento, fecha);
-		Ciclo ciclo = new Ciclo(
-				100*calcularEmocional(dias),
-				100*calcularFisico(dias),
-				100*calcularIntelectual(dias)
-		);
+		NumberFormat nf = NumberFormat.getInstance(); 
 		
+		nf.setMaximumFractionDigits(2);
+			
+		int dias = diasTranscurridos(nacimiento, fecha);
+		Ciclo ciclo = new Ciclo(100*calcularEmocional(dias),
+							100*calcularFisico(dias),
+							100*calcularIntelectual(dias));
 		return ciclo;
 	}
 	
@@ -76,7 +77,6 @@ public class Biorritmo {
 		
 		return lista;
 	}
-
 
 	private static double calcularEmocional(int dias) {
 		return Math.sin(2*Math.PI*dias / FRECUENCIA_EMOCIONAL);
