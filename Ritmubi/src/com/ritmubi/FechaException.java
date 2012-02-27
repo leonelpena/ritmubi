@@ -1,6 +1,6 @@
 package com.ritmubi;
 
-//public class FechaException extends Exception {
+//Clase para validar Fechas correctas
 public class FechaException extends RuntimeException {
 
 	private static final long serialVersionUID = -8209033899029761537L;

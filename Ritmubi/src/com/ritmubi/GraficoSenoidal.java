@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+//Clase que dibuja el grafico senoidal para el cálculo del Biorritmo para varios días.
 public class GraficoSenoidal extends Activity
 {
 	private TextView fechaView,
@@ -47,7 +48,8 @@ public class GraficoSenoidal extends Activity
         GraphViewSeries ondaIntelectual = new GraphViewSeries("Intelectual", Color.rgb(90, 250, 00),
         		dataIntelectual);
         GraphViewSeries ondaFisica = new GraphViewSeries("Fisica", Color.rgb(0,0,200), dataFisica);
-         
+        
+        //Creamos la vista del grafico y le damos formato 
         LineGraphView graphView;
 		graphView = new LineGraphView(this, "Biorritmo");
 		graphView.addSeries(ondaEmocional);
@@ -95,6 +97,7 @@ public class GraficoSenoidal extends Activity
 		intelectualView.setText(Biorritmo.INTELECTUAL+": "+ciclo.getIntelectual()+"%");
 		fisicoView.setText(Biorritmo.FISICO+": "+ciclo.getFisico()+"%");
 		
+		//Boton para un nuevo cálculo
 		botonnuevocalculo.setOnClickListener(new View.OnClickListener() 
 	    {
 			public void onClick(View v)

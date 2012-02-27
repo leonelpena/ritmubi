@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.Toast;
 
+//Clase que realiza el cálculo para un solo día
 public class UnDiaActivity extends Activity {
 
 	private Button botoncalcular,botonVolver;
@@ -39,6 +40,7 @@ public class UnDiaActivity extends Activity {
 		Calendar siguienteFecha = (Calendar)fechaNacimiento.clone();
 		siguienteFecha.add(Calendar.DATE, +1);
 
+		//Fecha que obtenemos del Picker
 		fechaACalcularPicker.init(siguienteFecha.get(Calendar.YEAR),
 				siguienteFecha.get(Calendar.MONTH), siguienteFecha.get(Calendar.DATE),
         	new OnDateChangedListener() {
@@ -56,6 +58,7 @@ public class UnDiaActivity extends Activity {
         	}
         );
     
+		//Evento Boton Calcular
         botoncalcular.setOnClickListener(new View.OnClickListener() 
         {
 			public void onClick(View v)
@@ -78,16 +81,13 @@ public class UnDiaActivity extends Activity {
 							Toast.LENGTH_LONG).show();
 					return;
 				}
-				
-				Toast.makeText(getApplicationContext(), ""+Biorritmo.diasTranscurridos(
-						fechaNacimiento.getTime(), fechaACalcular.getTime()),
-						Toast.LENGTH_LONG).show();
 				Intent i = new Intent(UnDiaActivity.this, GraficoBarras.class);
 				i.putExtra("ciclo", ciclo);
 				startActivity(i);
 			}
         });
         
+        //Evento boton para volver
         botonVolver.setOnClickListener(new View.OnClickListener() 
         {
 			public void onClick(View v) 

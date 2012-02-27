@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
-//import android.widget.Toast;
 
+
+//Clase de inicio Menu
 public class RitmubiActivity extends Activity 
 {
 	

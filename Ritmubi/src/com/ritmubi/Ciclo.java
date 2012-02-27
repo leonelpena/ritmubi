@@ -4,6 +4,7 @@ import java.util.Date;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+//Estructura Base que utiliza el biorritmo para el cálculo.
 public class Ciclo implements Parcelable {
 
 	private Date fecha;

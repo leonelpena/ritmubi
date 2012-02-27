@@ -12,6 +12,7 @@ import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphView.GraphViewSeries;
 import android.app.Activity;
 
+//Clase que dibuja El Grafico de barras para mostrar el Biorritmo de un dia, utiliza la libreria GraphView 2.0.
 public class GraficoBarras extends Activity  {
 	
 	private TextView emocionalText,
@@ -53,6 +54,7 @@ public class GraficoBarras extends Activity  {
 		intelectualText.setText(Biorritmo.INTELECTUAL+": "+
 				Integer.toString(ciclo.getIntelectual())+"%");
 		
+		//Boton para nuevo cálculo.
 		botonnuevocalculo.setOnClickListener(new View.OnClickListener() 
 	    {
 			public void onClick(View v)

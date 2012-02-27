@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 import android.widget.DatePicker.OnDateChangedListener;
 
+//Clase que realiza el cálculo para varios dias.
 public class VariosDiasActivity extends Activity 
 {
 	
@@ -82,27 +83,8 @@ public class VariosDiasActivity extends Activity
 				{
 					Toast.makeText(getApplicationContext(), "Fecha Incorrecta", 
 							Toast.LENGTH_LONG).show();
-
-					/*Toast.makeText(getApplicationContext(), "N: "+fechaNacimiento.get(
-							Calendar.DATE)+"-"+fechaNacimiento.get(Calendar.MONTH)+"-"+
-							fechaNacimiento.get(Calendar.YEAR)+", I: "+fechaInicio.get(
-							Calendar.DATE)+"-"+fechaInicio.get(Calendar.MONTH)+"-"+
-							fechaInicio.get(Calendar.YEAR)+", F: "+fechaFinal.get(
-							Calendar.DATE)+"-"+fechaFinal.get(Calendar.MONTH)+"-"+
-							fechaFinal.get(Calendar.YEAR), Toast.LENGTH_LONG).show();*/
 					return;
 				}
-				
-				/*Toast.makeText(getApplicationContext(), ""+Biorritmo.diasTranscurridos(
-						fechaNacimiento.getTime(), fechaInicio.getTime()),
-						Toast.LENGTH_LONG).show();
-				Toast.makeText(getApplicationContext(), "N: "+fechaNacimiento.get(
-						Calendar.DATE)+"-"+fechaNacimiento.get(Calendar.MONTH)+"-"+
-						fechaNacimiento.get(Calendar.YEAR)+", I: "+fechaInicio.get(
-						Calendar.DATE)+"-"+fechaInicio.get(Calendar.MONTH)+"-"+
-						fechaInicio.get(Calendar.YEAR)+", F: "+fechaFinal.get(
-						Calendar.DATE)+"-"+fechaFinal.get(Calendar.MONTH)+"-"+
-						fechaFinal.get(Calendar.YEAR), Toast.LENGTH_LONG).show();*/
 				
 				Intent intent = new Intent(VariosDiasActivity.this, GraficoSenoidal.class);
 				intent.putExtra("listaCiclos", listaCiclos);
@@ -111,6 +93,7 @@ public class VariosDiasActivity extends Activity
 
 		});
         
+        //Boton para volver
         botonVolver.setOnClickListener(new View.OnClickListener() 
         {
 			public void onClick(View v) 

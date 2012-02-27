@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+//Una de las clases principales que realiza los cálculos relacionados al % de cada uno de los aspectos en los cuales se basa el Biorritmo.
 public class Biorritmo {
 
 	public static final short 
