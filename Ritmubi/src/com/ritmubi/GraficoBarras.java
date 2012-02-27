@@ -16,15 +16,19 @@ public class GraficoBarras extends Activity  {
 	
 	private TextView emocionalText,
 					fisicoText,
-					intelectualText;
+					intelectualText,
+					fechaText;
 	private Button botonnuevocalculo;
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.grafico_barras);
+		
 		botonnuevocalculo = (Button)findViewById(R.id.nuevocalculo);
 		emocionalText = (TextView) findViewById(R.id.emocionalText);
 		fisicoText = (TextView) findViewById(R.id.fisicoText);
 		intelectualText = (TextView) findViewById(R.id.intelectualText);
+		fechaText = (TextView) findViewById(R.id.fechaBarra);
 		
 		Bundle bundle = getIntent().getExtras();
 		Ciclo ciclo = (Ciclo) bundle.getParcelable("ciclo");
@@ -41,6 +45,7 @@ public class GraficoBarras extends Activity  {
 		layout.addView(graphView);
 		
 		// Se escriben los porcentajes en la vista
+		fechaText.setText("Fecha: "+ciclo.getFechaFormateada());
 		emocionalText.setText(Biorritmo.EMOCIONAL+": "+
 				Integer.toString(ciclo.getEmocional())+"%");
 		fisicoText.setText(Biorritmo.FISICO+": "+

@@ -1,7 +1,7 @@
 package com.ritmubi;
 
-//public class FechaException extends Exception {
-public class FechaException extends RuntimeException {
+public class FechaException extends Exception {
+//public class FechaException extends RuntimeException {
 
 	private static final long serialVersionUID = -8209033899029761537L;
 

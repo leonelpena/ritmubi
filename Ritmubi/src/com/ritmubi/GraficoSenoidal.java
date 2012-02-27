@@ -20,6 +20,7 @@ public class GraficoSenoidal extends Activity
 					fisicoView;
 	private ArrayList<Ciclo> listaCiclos;
 	private Button botonnuevocalculo;
+
 	public void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
@@ -65,8 +66,7 @@ public class GraficoSenoidal extends Activity
 		fisicoView = (TextView) findViewById(R.id.fisico_1);
 		
 		ciclo = listaCiclos.get(0);
-		fechaView.setText("Fecha: "+ciclo.getFecha().getDate()+"/"+
-				(ciclo.getFecha().getMonth()+1) + "/"+ciclo.getFecha().getYear() );
+		fechaView.setText("Fecha: "+ciclo.getFechaFormateada());
 		emocionalView.setText(Biorritmo.EMOCIONAL+": "+ciclo.getEmocional()+"%");
 		intelectualView.setText(Biorritmo.INTELECTUAL+": "+ciclo.getIntelectual()+"%");
 		fisicoView.setText(Biorritmo.FISICO+": "+ciclo.getFisico()+"%");
@@ -78,8 +78,7 @@ public class GraficoSenoidal extends Activity
 		fisicoView = (TextView) findViewById(R.id.fisico_2);
 		
 		ciclo = listaCiclos.get(1);
-		fechaView.setText("Fecha: "+ciclo.getFecha().getDate()+"/"+
-				(ciclo.getFecha().getMonth()+1) + "/"+ciclo.getFecha().getYear() );
+		fechaView.setText("Fecha: "+ciclo.getFechaFormateada());
 		emocionalView.setText(Biorritmo.EMOCIONAL+": "+ciclo.getEmocional()+"%");
 		intelectualView.setText(Biorritmo.INTELECTUAL+": "+ciclo.getIntelectual()+"%");
 		fisicoView.setText(Biorritmo.FISICO+": "+ciclo.getFisico()+"%");
@@ -91,8 +90,7 @@ public class GraficoSenoidal extends Activity
 		fisicoView = (TextView) findViewById(R.id.fisico_3);
 		
 		ciclo = listaCiclos.get(2);
-		fechaView.setText("Fecha: "+ciclo.getFecha().getDate()+"/"+
-				(ciclo.getFecha().getMonth()+1) + "/"+ciclo.getFecha().getYear() );
+		fechaView.setText("Fecha: "+ciclo.getFechaFormateada());
 		emocionalView.setText(Biorritmo.EMOCIONAL+": "+ciclo.getEmocional()+"%");
 		intelectualView.setText(Biorritmo.INTELECTUAL+": "+ciclo.getIntelectual()+"%");
 		fisicoView.setText(Biorritmo.FISICO+": "+ciclo.getFisico()+"%");

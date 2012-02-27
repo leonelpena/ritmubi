@@ -16,6 +16,8 @@
 
 		</LinearLayout>
 
+
+
 		<LinearLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
 		    android:id="@+id/LinearLayout01"
@@ -23,33 +25,49 @@
 		    android:layout_height="250dip"
 		    android:orientation="vertical" >
 
+
 		    <TextView
-		        android:id="@+id/fisicoText"
+		        android:id="@+id/fechaBarra"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/fisico"
+		        android:layout_marginLeft="5dp"
+		        android:text="@string/fecha"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		    <TextView
 		        android:id="@+id/emocionalText"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
 		        android:text="@string/emocional"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		    <TextView
+		        android:id="@+id/fisicoText"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:text="@string/fisico"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		    <TextView
 		        android:id="@+id/intelectualText"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
 		        android:text="@string/intelectual"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />
-		    
+
+
+
 		    <Button
 		        android:id="@+id/nuevocalculo"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center"
-		        android:text="Nuevo Cálculo" />
+		        android:layout_marginTop="10dp"
+		        android:text="@string/nuevoCalculo" />
+
 		</LinearLayout>
 
 		</LinearLayout>

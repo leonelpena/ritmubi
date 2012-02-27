@@ -1,6 +1,6 @@
 package com.ritmubi;
 
-import java.util.Date;
+import java.util.Calendar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,6 @@ public class UnDiaActivity extends Activity {
 
 	private Button botoncalcular,botonVolver;
 	private DatePicker fechaACalcularPicker;
-	private Date fechaNacimiento;
-	private Date fechaACalcular;
 	public Ciclo ciclo;
 
 	/** Called when the activity is first created. */
@@ -23,7 +21,6 @@ public class UnDiaActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.un_dia);
         
-        fechaACalcular = new Date();
         botoncalcular = (Button)findViewById(R.id.botonCalcular);
         botonVolver = (Button) findViewById(R.id.botonVolver);
         fechaACalcularPicker =  (DatePicker)findViewById(R.id.selectorFechaACalcular);
@@ -36,19 +33,21 @@ public class UnDiaActivity extends Activity {
 				Bundle bundle = getIntent().getExtras();
 				
 				// Fecha de Nacimiento
-				fechaNacimiento = new Date();
-				fechaNacimiento.setDate(bundle.getInt("dayNacimiento"));
-				fechaNacimiento.setMonth(bundle.getInt("monthNacimiento"));
-				fechaNacimiento.setYear(bundle.getInt("yearNacimiento"));
+				Calendar fechaNacimiento = Calendar.getInstance();
+				fechaNacimiento.set(bundle.getInt("yearNacimiento"),
+						bundle.getInt("monthNacimiento"), bundle.getInt("dayNacimiento"),
+						Biorritmo.HORAS, Biorritmo.MINUTOS, Biorritmo.SEGUNDOS);
 
 				// Fecha a Calcular
-				fechaACalcular.setDate(fechaACalcularPicker.getDayOfMonth());
-				fechaACalcular.setMonth(fechaACalcularPicker.getMonth());
-				fechaACalcular.setYear(fechaACalcularPicker.getYear());
+				Calendar fechaACalcular = Calendar.getInstance();
+				fechaACalcular.set(fechaACalcularPicker.getYear(),
+						fechaACalcularPicker.getMonth(), fechaACalcularPicker.getDayOfMonth(),
+						Biorritmo.HORAS, Biorritmo.MINUTOS, Biorritmo.SEGUNDOS);
 
 				try 
 				{
-					ciclo = Biorritmo.calcular(fechaNacimiento, fechaACalcular);
+					ciclo = Biorritmo.calcular(fechaNacimiento.getTime(),
+								fechaACalcular.getTime());
 				} 
 				catch(FechaException e) 
 				{

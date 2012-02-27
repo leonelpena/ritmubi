@@ -56,6 +56,10 @@ public class Ciclo implements Parcelable {
 		return fecha;
 	}
 	
+	public String getFechaFormateada() {
+		return (fecha.getDate()+" / "+(fecha.getMonth()+1)+" / "+fecha.getYear());
+	}
+	
 	public int describeContents() {
 		return 0;
 	}

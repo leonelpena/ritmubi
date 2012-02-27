@@ -2,7 +2,6 @@ package com.ritmubi;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +14,6 @@ public class VariosDiasActivity extends Activity
 {
 	
 	private Button botonVolver,botonCalcular;
-	private Date fechaNacimiento = new Date();
-	private Date fechaInicio = new Date();
-	private Date fechaFin =  new Date();
 	private DatePicker fechaACalcularPicker;
 	ArrayList<Ciclo> listaCiclos;
 	
@@ -44,36 +40,36 @@ public class VariosDiasActivity extends Activity
 				Bundle bundle = getIntent().getExtras();
 				fechaACalcularPicker =  (DatePicker)findViewById(R.id.selectorFechaInicio);
 				// Fecha de Nacimiento
-				fechaNacimiento.setDate(bundle.getInt("dayNacimiento"));
-				fechaNacimiento.setMonth(bundle.getInt("monthNacimiento"));
-				fechaNacimiento.setYear(bundle.getInt("yearNacimiento"));
+				Calendar fechaNacimiento = Calendar.getInstance();
+				fechaNacimiento.set(bundle.getInt("yearNacimiento"),
+						bundle.getInt("monthNacimiento"), bundle.getInt("dayNacimiento"),
+						Biorritmo.HORAS, Biorritmo.MINUTOS, Biorritmo.SEGUNDOS);
 
 				// Fecha Inicio Calculo
-				fechaInicio.setDate(fechaACalcularPicker.getDayOfMonth());
-				fechaInicio.setMonth(fechaACalcularPicker.getMonth());
-				fechaInicio.setYear(fechaACalcularPicker.getYear());
+				Calendar fechaInicio = Calendar.getInstance();
+				fechaInicio.set(fechaACalcularPicker.getYear(),
+						fechaACalcularPicker.getMonth(), fechaACalcularPicker.getDayOfMonth(),
+						Biorritmo.HORAS, Biorritmo.MINUTOS, Biorritmo.SEGUNDOS);
 
-				Calendar fechaFinal = Calendar.getInstance();
-				fechaFinal.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDate());
+				Calendar fechaFinal = (Calendar) fechaInicio.clone();
+				// Se aumenta la fecha en 42 dias para que una vez dibujada la función seno
+				// se pueda ver correctamente
 				fechaFinal.add(Calendar.DATE, +42);
-
-				fechaFin.setDate(fechaFinal.get(Calendar.DATE));
-				fechaFin.setMonth(fechaFinal.get(Calendar.MONTH));
-				fechaFin.setYear(fechaFinal.get(Calendar.YEAR));
 				
 				try
 				{
-					listaCiclos = Biorritmo.calcular(fechaNacimiento, fechaInicio, fechaFin);
+					listaCiclos = Biorritmo.calcular(fechaNacimiento.getTime(),
+							fechaInicio.getTime(), fechaFinal.getTime());
 				}
 				catch(FechaException e) 
 				{
-					//Toast.makeText(getApplicationContext(), "Fecha Incorrecta",
-					Toast.makeText(getApplicationContext(), "N: "+fechaNacimiento.getDate()+
-							" "+fechaNacimiento.getMonth()+" "+fechaNacimiento.getYear()+
-							", I: "+fechaInicio.getDate()+" "+fechaInicio.getMonth()+
-							" "+fechaInicio.getYear()+" , F: "+fechaFinal.get(Calendar.DAY_OF_MONTH)+
-							" "+fechaFinal.get(Calendar.MONTH)+" "+fechaFinal.get(Calendar.YEAR),
-							Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "N: "+fechaNacimiento.get(
+							Calendar.DATE)+"-"+fechaNacimiento.get(Calendar.MONTH)+"-"+
+							fechaNacimiento.get(Calendar.YEAR)+", I: "+fechaInicio.get(
+							Calendar.DATE)+"-"+fechaInicio.get(Calendar.MONTH)+"-"+
+							fechaInicio.get(Calendar.YEAR)+", F: "+fechaFinal.get(
+							Calendar.DATE)+"-"+fechaFinal.get(Calendar.MONTH)+"-"+
+							fechaFinal.get(Calendar.YEAR), Toast.LENGTH_LONG).show();
 					return;
 				}
 				
