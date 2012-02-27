@@ -88,7 +88,7 @@ public class Biorritmo {
 		return Math.sin(2*Math.PI*dias / FRECUENCIA_INTELECTUAL);
 	}
 	
-	private static int diasTranscurridos(Date inicio, Date fin) 
+	public static int diasTranscurridos(Date inicio, Date fin) 
 				throws FechaException {
 		
 		if( inicio.after(fin) )
@@ -96,6 +96,8 @@ public class Biorritmo {
 					" "+inicio.getYear()+", F: "+fin.getDate()+" "+fin.getMonth()+
 					" "+fin.getYear());
 
+		//float dias = (fin.getTime() - inicio.getTime()) / MILISEGUNDOS_POR_DIA;
+		//return Float.r
 		return (int) ((fin.getTime() - inicio.getTime()) / MILISEGUNDOS_POR_DIA);
 	}
 }

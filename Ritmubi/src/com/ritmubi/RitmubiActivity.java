@@ -33,7 +33,8 @@ public class RitmubiActivity extends Activity
         {
 			public void onClick(View v) 
 			{
-				setActionUnDia();
+				//setActionUnDia();
+				lanzadorUnDiaActivity();
 			}
 		});
         //Seleccionamos calcular un solo día
